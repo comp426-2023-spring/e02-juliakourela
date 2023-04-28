@@ -102,3 +102,37 @@ process.on('SIGINT', () => {
         }    
     })
 })
+
+// my code starts here! Most of this code is from my A04 code.
+
+import {rps, rpsls} from "./lib/rpsls.js";
+
+// default check
+app.get('/app', (req, res) => {
+    res.status(200).send('200 OK');
+})
+
+//rps with arg
+app.get('/app/rps/play', (req, res) => {
+    res.status(200).send(JSON.stringify(rps(req.query.shot)));
+})
+
+//rpsls with arg
+app.get('/app/rpsls/play', (req, res) => {
+    res.status(200).send(JSON.stringify(rpsls(req.query.shot)));
+})
+
+// get params for rps
+app.get('/app/rps/play/:shot', (req, res) => {
+    res.status(200).send(JSON.stringify(rps(req.params.shot)));
+})
+
+// get params for rpsls
+app.get('/app/rpsls/play/:shot', (req, res) => {
+    res.status(200).send(JSON.stringify(rpsls(req.params.shot)));
+})
+
+// undefined endpoint
+app.get('*', (req, res) => {
+    res.status(404).send("404 NOT FOUND");
+})
