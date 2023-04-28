@@ -9,14 +9,14 @@
     <body onload="showHideShots()">
 
 		<form id="userinput" class="" action="javascript:void(0);">
-			<input type="radio" id="rps" name="game" value="rps" checked="checked" onclick="showHideShots()">
-			<label for="rps">Play rock, paper, scissors?</label>
+			<input type="radio" id="rps" name="game" value="rps" checked="checked" class="selecting" onclick="showHideShots()">
+			<label for="rps" class="selecting">Play rock, paper, scissors?</label>
 			<br/><br/>
-			<input type="radio" id="rpsls" name="game" value="rpsls" checked="checked" onclick="showHideShots()">
-			<label for="rpsls">Play rock, paper, scissors, lizard, Spock?</label>
+			<input type="radio" id="rpsls" name="game" value="rpsls" checked="checked" class="selecting" onclick="showHideShots()">
+			<label for="rpsls" class="selecting">Play rock, paper, scissors, lizard, Spock?</label>
 			<br/><br/>
-			<input type="checkbox" id="opponent" name="playtype" value="opponent" onclick="showHideShots()">
-			<label for="opponent">Play against an opponent?</label>
+			<input type="checkbox" id="opponent" name="playtype" value="opponent" class="selecting" onclick="showHideShots()">
+			<label for="opponent" class="selecting">Play against an opponent?</label>
 			<br/><br/>
 			<input type="radio" id="rock" name="shot" value="rock" class="shots_rps" checked="checked">
 			<label class="shots_rps">Rock</label>
@@ -28,12 +28,14 @@
 			<label class="shots_rpsls">Lizard</label>
 			<input type="radio" id="spock" name="shot" value="spock" class="shots_rpsls">
 			<label class="shots_rpsls">Spock</label>
+            <br/><br/>
+            <label class="result" id="theresult">Result</label>
 <!--			<br/><br/>
 			<input type="submit" id="play" name="controls" value="Play">
       <input type="submit" id="startover" name="controls" value="Start Over"> -->
 		</form>
 		<br/><br/>
-    <button type="button" id="play" onclick="playGame()">Play</button>
+    <button type="button" id="play" class="selecting" onclick="playGame()">Play</button>
     <button type="button" id="startover" onclick="startOver()">Start Over</button>
 
     <!-- Your interface markup goes here -->

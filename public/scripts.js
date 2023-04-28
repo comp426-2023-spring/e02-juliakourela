@@ -7,6 +7,7 @@ function showHideShots() {
     // Get the info from the checkbox
           let check = document.getElementById('opponent');
           let rpsls = document.getElementById('rpsls');
+          $('.result').hide()
     // Check if the checkbox is checked and show or hide options accordingly
         if (check.checked == true) {
     // Here, instead of just showing all of the options, use similar logic to 
@@ -29,6 +30,8 @@ function showHideShots() {
     // radio buttons. 
     function startOver () {
         document.getElementById('userinput').reset();
+        $('.selecting').show()
+        $('.result').hide()
         showHideShots();
     }
     
@@ -54,7 +57,21 @@ function showHideShots() {
         let result = await response.json()
         // Log the result
         console.log(result)
+        let resultText = document.getElementById('theresult');
+        let check = document.getElementById('opponent');
+        if (check.checked == true) {
+            resultText.innerHTML = "You: " + result.player + "<br>Your opponent: " + result.opponent + "<br>Result: " + result.result
+        }
+        else {
+            resultText.innerHTML = result.opponent
+        }
+        $('.result').show()
+        $('.selecting').hide()
+        $('.shots_rpsls').hide()
+        $('.shots_rps').hide()
         // Here you should include code that uses the DOM API or jQuery to 
         // manipulate another block of HTML in the interface to display the 
         // results in some way. 
+
+        //var result_json = JSON.parse(result);
     }
