@@ -5,7 +5,6 @@
 // on whether or not the #opponent checkbox is checked
 function showHideShots() {
     // Get the info from the checkbox
-    $('.tohide').hide()
           let check = document.getElementById('opponent');
           let rpsls = document.getElementById('rpsls');
           $('.result').hide()
@@ -16,7 +15,6 @@ function showHideShots() {
     // options relevant to the game being selected (rps or rpsls). You can 
     // use similar jQuery 
             $('.shots_rps').show()
-            $('.tohide').hide()
             if (rpsls.checked == true) {
                 $('.shots_rpsls').show()
             }
@@ -34,7 +32,6 @@ function showHideShots() {
         document.getElementById('userinput').reset();
         $('.selecting').show()
         $('.result').hide()
-        $('.tohide').hide()
         showHideShots();
     }
     
@@ -72,7 +69,6 @@ function showHideShots() {
         $('.selecting').hide()
         $('.shots_rpsls').hide()
         $('.shots_rps').hide()
-        $('.tohide').hide()
         // Here you should include code that uses the DOM API or jQuery to 
         // manipulate another block of HTML in the interface to display the 
         // results in some way. 
