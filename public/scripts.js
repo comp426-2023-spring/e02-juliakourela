@@ -8,6 +8,7 @@ function showHideShots() {
           let check = document.getElementById('opponent');
           let rpsls = document.getElementById('rpsls');
           $('.result').hide()
+          $('.tohide').hide()
     // Check if the checkbox is checked and show or hide options accordingly
         if (check.checked == true) {
     // Here, instead of just showing all of the options, use similar logic to 
@@ -32,6 +33,7 @@ function showHideShots() {
         document.getElementById('userinput').reset();
         $('.selecting').show()
         $('.result').hide()
+        $('.tohide').hide()
         showHideShots();
     }
     
@@ -69,6 +71,7 @@ function showHideShots() {
         $('.selecting').hide()
         $('.shots_rpsls').hide()
         $('.shots_rps').hide()
+        $('.tohide').hide()
         // Here you should include code that uses the DOM API or jQuery to 
         // manipulate another block of HTML in the interface to display the 
         // results in some way. 
